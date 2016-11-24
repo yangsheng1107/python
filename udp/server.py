@@ -44,7 +44,7 @@ def udp_server_test(timeout=5, host=None, port=None):
         except socket.error, e:
             err = e.args[0]
             if err == errno.EAGAIN or err == errno.EWOULDBLOCK:
-                sleep(1)
+                time.sleep(1)
                 continue
             else:
                 print e
